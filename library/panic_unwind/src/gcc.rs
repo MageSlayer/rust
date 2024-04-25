@@ -38,7 +38,7 @@
 
 use alloc::boxed::Box;
 use core::any::Any;
-use core::ptr;
+//use core::ptr;
 
 use unwind as uw;
 
@@ -90,6 +90,8 @@ pub unsafe fn cleanup(ptr: *mut u8) -> Box<dyn Any + Send> {
     }
 
     let exception = exception.cast::<Exception>();
+
+    /*
     // Just access the canary field, avoid accessing the entire `Exception` as
     // it can be a foreign Rust exception.
     let canary = ptr::addr_of!((*exception).canary).read();
@@ -100,6 +102,7 @@ pub unsafe fn cleanup(ptr: *mut u8) -> Box<dyn Any + Send> {
         // "Rust panic must be rethrown" message.
         super::__rust_foreign_exception();
     }
+    */
 
     let exception = Box::from_raw(exception as *mut Exception);
     exception.cause

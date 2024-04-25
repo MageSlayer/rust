@@ -1,0 +1,10 @@
+# Includes one of the default files in src/bootstrap/defaults
+profile = "compiler"
+changelog-seen = 2
+
+[llvm]
+download-ci-llvm = false
+
+[target.x86_64-apple-darwin]
+linker = "x86_64-apple-darwin20.4-clang"
+ar = "x86_64-apple-darwin20.4-ar"

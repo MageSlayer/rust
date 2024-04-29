@@ -3,7 +3,12 @@ profile = "compiler"
 changelog-seen = 2
 
 [llvm]
+optimize = true
+release-debuginfo = false
 download-ci-llvm = false
+
+[rust]
+debug = false
 
 [build]
 sanitizers = true

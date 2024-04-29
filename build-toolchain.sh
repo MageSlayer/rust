@@ -17,7 +17,7 @@ function sanitizers() {
     # note: cc: error: {$HOME}/rust/build/x86_64-unknown-linux-gnu/stage2/lib/rustlib/x86_64-unknown-linux-gnu/lib/librustc-dev_rt.lsan.a: No such file or directory
 
     pushd build/x86_64-unknown-linux-gnu
-    mv native/sanitizers/build/lib/linux/*  stage2/lib/rustlib/x86_64-unknown-linux-gnu/lib/
+    cp -f native/sanitizers/build/lib/linux/*  stage2/lib/rustlib/x86_64-unknown-linux-gnu/lib/
     popd
 }
 

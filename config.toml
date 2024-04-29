@@ -5,6 +5,9 @@ changelog-seen = 2
 [llvm]
 download-ci-llvm = false
 
+[build]
+sanitizers = true
+
 [target.x86_64-apple-darwin]
 linker = "x86_64-apple-darwin20.4-clang"
 ar = "x86_64-apple-darwin20.4-ar"

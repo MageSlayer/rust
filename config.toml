@@ -6,12 +6,17 @@ changelog-seen = 2
 optimize = true
 release-debuginfo = false
 download-ci-llvm = false
+thin-lto = true
+cxxflags = "-march=native"
+cflags = "-march=native"
 
 [rust]
 debug = false
 parallel-compiler = true
 channel = "nightly"
 jemalloc = true
+codegen-units = 1
+codegen-units-std = 1
 
 [target.x86_64-unknown-linux-gnu]
 sanitizers = true

@@ -7,6 +7,10 @@ set -e
 export PATH=/usr/local/osx-ndk-x86/bin:$(pwd):${PATH}
 export LD_LIBRARY_PATH=/usr/local/osx-ndk-x86/lib
 
+
+export CC_x86_64_unknown_linux_gnu=clang
+export CXX_x86_64_unknown_linux_gnu=clang++
+
 export CC_x86_64_apple_darwin=x86_64-apple-darwin20.4-cc
 export CC_aarch64_apple_darwin=aarch64-apple-darwin20.4-cc
 export CC_x86_64_pc_windows_gnu=x86_64-w64-mingw32-gcc

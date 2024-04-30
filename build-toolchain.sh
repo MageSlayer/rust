@@ -5,7 +5,7 @@
 set -e
 
 export PATH=/usr/local/osx-ndk-x86/bin:$(pwd):${PATH}
-export LD_LIBRARY_PATH=/usr/local/osx-ndk-x86/lib
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/osx-ndk-x86/lib
 
 
 export CC_x86_64_unknown_linux_gnu=clang

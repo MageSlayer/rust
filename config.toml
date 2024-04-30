@@ -6,9 +6,10 @@ changelog-seen = 2
 optimize = true
 release-debuginfo = false
 download-ci-llvm = false
-thin-lto = true
 cxxflags = "-march=native"
 cflags = "-march=native"
+# does not link on CentOS7 using LLVM/lld-7+
+#thin-lto = true
 
 [rust]
 debug = false

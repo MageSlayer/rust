@@ -10,6 +10,7 @@ cxxflags = "-march=native"
 cflags = "-march=native"
 # does not link on CentOS7 using LLVM/lld-7+
 #thin-lto = true
+#static-libstdcpp = true
 
 [rust]
 debug = false

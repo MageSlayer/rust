@@ -7,6 +7,10 @@ set -e
 export PATH=/usr/local/osx-ndk-x86/bin:$(pwd):${PATH}
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/osx-ndk-x86/lib
 
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${HOME}/rust/build/x86_64-unknown-linux-gnu/stage0-sysroot/lib/rustlib/x86_64-unknown-linux-gnu/lib
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/opt/rh/devtoolset-11/root/usr/lib/gcc/x86_64-redhat-linux/11
+#export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/lib/llvm-11/lib
+
 
 export CC_x86_64_unknown_linux_gnu=clang
 export CXX_x86_64_unknown_linux_gnu=clang++
@@ -35,6 +39,8 @@ else
     . /etc/os-release
     if [[ "devuan" == "$ID" ]]; then
 	# chrooted build
+	echo "CHROOT"
+	#export PATH=${HOME}/rust/build/x86_64-unknown-linux-gnu/llvm/bin:${PATH}
 	./x build --stage 2 --target x86_64-apple-darwin,aarch64-apple-darwin,x86_64-pc-windows-gnu
     else
 	# main build
